@@ -7,3 +7,4 @@ This app is a platform for showcasing clothes and shoes Fashion designs.
 - React Native
 - React Navigation
 - Google Maps
+- Tailwind css
