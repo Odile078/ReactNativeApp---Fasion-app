@@ -43,7 +43,7 @@ const SplashScreen = () => {
       Animated.sequence([
         Animated.timing(startAnimation, {
           // toValue: -Dimensions.get("window").height + 100,
-          toValue: -Dimensions.get("window").height + (edges.top + 65),
+          toValue: -Dimensions.get("window").height + (s.top + 65),
           useNativeDriver: true,
         }),
         Animated.timing(scaleLogo, {

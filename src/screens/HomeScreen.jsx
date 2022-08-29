@@ -26,6 +26,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import ShoppingImage from "../../assets/shopping-img.png";
 import ProductsList from "../components/ProductsList";
 import PreviewList from "../components/PreviewList";
+// import SkeletonContent from "react-native-skeleton-content";
 const HomeScreen = () => {
   const { womenShoes } = useSelector(({ Product }) => Product);
   const xml = `
@@ -37,13 +38,6 @@ const HomeScreen = () => {
     <SafeAreaView style={tw`bg-white h-full relative `}>
       <ScrollView horizontal={false} style={tw`mb-4  `}>
         <View>
-          {/* <Text style={tw`p-4 android:pt-2 text-red-300 flex-row font-bold `}>
-            Millenium Wear
-          </Text> */}
-          {/* <View>
-          <SvgXml xml={xml} width="100%" height="100%" />
-        </View> */}
-
           <View>
             <View
               style={tw` h-60 relative mx-4 mb-2 rounded-xl overflow-hidden`}
@@ -80,31 +74,6 @@ const HomeScreen = () => {
                 style={tw`w-full h-60 absolute top-0 z-0 rounded-xl overflow-hidden`}
               />
             </View>
-
-            {/* <LinearGradient
-            colors={["#c0392b", "#f1c40f", "#8e44ad"]}
-            start={{ x: 0, y: 0.5 }}
-            end={{ x: 1, y: 1 }}
-            style={tw` py-4 px-2 mt-10 rounded-md relative h-60`}
-          >
-            <Text
-              style={tw`text-white text-2xl font-bold mx-2 text-center z-1`}
-            >
-              All you need , all you want here at Millenium Wear
-            </Text>
-            <Image
-              style={{
-                width: "100%",
-                height: "100%",
-                resizeMode: "contain",
-                zIndex: 2,
-                position: "absolute",
-                bottom: 0,
-                right: 0,
-              }}
-              source={ShoppingImage}
-            />
-          </LinearGradient> */}
           </View>
           <View style={tw`mx-4`}>
             <GooglePlacesAutocomplete
@@ -136,7 +105,14 @@ const HomeScreen = () => {
           <View style={tw`mx-4`}>
             <NavOptions />
           </View>
-
+          {/* <SkeletonContent
+            containerStyle={{ flex: 1, width: 300 }}
+            animationDirection="horizontalLeft"
+            isLoading={true}
+          >
+            <Text style={styles.normalText}>Your content</Text>
+            <Text style={styles.bigText}>Other content</Text>
+          </SkeletonContent> */}
           <View style={tw`mx-4`}>
             <Text style={tw` text-base font-bold text-gray-800`}>Newest</Text>
             <PreviewList products={womenShoes.slice(0, 4)} />
